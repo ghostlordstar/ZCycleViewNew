@@ -14,11 +14,13 @@ A picture/text infinite-scroll library with UICollectionView, It can be very eas
 ## Installation
 
 ### CocoaPods
-    Add the following line to your Podfile:
+Add the following line to your Podfile:
 
 ```pod 'ZCycleViewNew'```
 
+
 If you want to support swift 4.0:
+
 ```pod 'ZCycleViewNew', '~> 0.1.0' ```
 
 ## How To
