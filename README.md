@@ -1,12 +1,25 @@
-# ZCycleView
+# ZCycleViewNew
 
 A picture/text infinite-scroll library with UICollectionView, It can be very easy to help you make the banner you want
 
 使用`UICollectionView`实现常见图片/文字无限轮播，支持自定义`pageControl`，自定义文字样式，以及轮播样式
 
-![image](https://travis-ci.org/MQZHot/ZCycleView.svg?branch=master)   ![](https://img.shields.io/badge/support-swift%204%2B-green.svg)  ![](https://img.shields.io/badge/support-iOS%208%2B-blue.svg)  ![](https://img.shields.io/cocoapods/v/ZCycleView.svg?style=flat)
+![image](https://travis-ci.org/ghostlordstar/ZCycleView.svg?branch=master)   ![](https://img.shields.io/badge/support-swift%204%2B-green.svg)  ![](https://img.shields.io/badge/support-iOS%208%2B-blue.svg)  ![](https://img.shields.io/cocoapods/v/ZCycleViewNew.svg?style=flat)
 
 <img src="https://github.com/MQZHot/ZCycleView/raw/master/Picture/picture.gif">
+
+## Update
+原库好久未更新，最新swift版本基本不能使用，所以本人`fork`并开始继续维护，新库命名为`ZCycleViewNew`。
+
+## Installation
+
+### CocoaPods
+    Add the following line to your Podfile:
+
+```pod 'ZCycleViewNew'```
+
+If you want to support swift 4.0:
+```pod 'ZCycleViewNew', '~> 0.1.0' ```
 
 ## How To
 
@@ -158,8 +171,8 @@ var placeholderImage: UIImage? = nil
 
 ## Contact
 
-* Email: mqz1228@163.com
+* Email: heshanzhang@outlook.com
 
 ## LICENSE
 
-ZCycleView is released under the MIT license. See [LICENSE](https://github.com/MQZHot/ZCycleView/blob/master/LICENSE) for details.
+ZCycleViewNew is released under the MIT license. 
