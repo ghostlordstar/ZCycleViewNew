@@ -13,6 +13,6 @@ s.license      = "MIT"
 s.license      = { :type => "MIT", :file => "LICENSE" }
 s.dependency 'Kingfisher', '>= 4.3.1'
 if s.respond_to? 'swift_version'
-    s.swift_version >= "4.2"
+    s.swift_version = "4.2"
   end
 end
