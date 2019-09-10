@@ -329,7 +329,7 @@ public class ZCycleView: UIView {
         collectionView.delegate                       = self
         collectionView.dataSource                     = self
         collectionView.scrollsToTop                   = false
-        collectionView.decelerationRate               = UIScrollView.DecelerationRate(rawValue: 0.0)
+        collectionView.decelerationRate               = 0.0
 //        collectionView.isPagingEnabled                = true
         registerCell()
         addSubview(collectionView)
@@ -519,7 +519,7 @@ extension ZCycleView {
         if itemsCount <= 1 { return }
         cancelTimer()
         timer = Timer.init(timeInterval: Double(timeInterval), target: self, selector: #selector(timeRepeat), userInfo: nil, repeats: true)
-        RunLoop.main.add(timer!, forMode: RunLoop.Mode.common)
+        RunLoop.main.add(timer!, forMode: RunLoopMode.commonModes)
     }
     fileprivate func cancelTimer() {
         if timer != nil {
