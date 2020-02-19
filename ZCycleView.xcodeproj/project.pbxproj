@@ -190,7 +190,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-ZCycleView/Pods-ZCycleView-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-ZCycleView/Pods-ZCycleView-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -199,7 +199,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZCycleView/Pods-ZCycleView-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ZCycleView/Pods-ZCycleView-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		719C63B46C8EE779F0BB4061 /* [CP] Check Pods Manifest.lock */ = {
