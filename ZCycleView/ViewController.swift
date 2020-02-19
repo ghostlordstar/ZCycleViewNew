@@ -115,7 +115,7 @@ class ViewController: UIViewController {
         cycleView5.titleViewHeight = 40
         cycleView5.pageControlSpacing = 10
         cycleView5.pageControlItemSize = CGSize(width: 10, height: 10)
-        cycleView5.pageControlHeight = 150
+        cycleView5.itemInsetBottom = 25
     }
     deinit {
         print("dealloc")

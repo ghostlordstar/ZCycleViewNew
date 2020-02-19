@@ -6,7 +6,7 @@ A picture/text infinite-scroll library with UICollectionView, It can be very eas
 
 ![image](https://travis-ci.org/ghostlordstar/ZCycleView.svg?branch=master)   ![](https://img.shields.io/badge/support-swift%204%2B-green.svg)  ![](https://img.shields.io/badge/support-iOS%208%2B-blue.svg)  ![](https://img.shields.io/cocoapods/v/ZCycleViewNew.svg?style=flat)
 
-<img src="https://github.com/MQZHot/ZCycleView/raw/master/Picture/picture.gif">
+<img src="https://github.com/ghostlordstar/ZCycleViewNew/raw/master/Picture/picture.gif">
 
 ## Update
 原库好久未更新，最新swift版本基本不能使用，所以本人`fork`并开始继续维护，新库命名为`ZCycleViewNew`。
@@ -50,7 +50,7 @@ If you want the effect in the picture below, use the following method
 
 ***Special reminder, be sure to set the size, otherwise the picture does not display***
 
-<img src="https://github.com/MQZHot/ZCycleView/raw/master/Picture/pic1.png">
+<img src="https://github.com/ghostlordstar/ZCycleViewNew/raw/master/Picture/pic1.png">
 
 ```swift
 func setTitleImagesGroup(_ titleImagesGroup: [UIImage?], sizeGroup:[CGSize?])
@@ -76,13 +76,13 @@ E.g, Effect as shown below
 cycleView.itemSize = CGSize(width: 240, height: 90)
 cycleView.itemZoomScale = 1.2
 ```
-<img src="https://github.com/MQZHot/ZCycleView/raw/master/Picture/pic2.png">
+<img src="https://github.com/ghostlordstar/ZCycleViewNew/raw/master/Picture/pic2.png">
 
 #### About desc settings
 
-<img src="https://github.com/MQZHot/ZCycleView/raw/master/Picture/pic5.png">
+<img src="https://github.com/ghostlordstar/ZCycleViewNew/raw/master/Picture/pic5.png">
 
-<img src="https://github.com/MQZHot/ZCycleView/raw/master/Picture/pic6.png">
+<img src="https://github.com/ghostlordstar/ZCycleViewNew/raw/master/Picture/pic6.png">
 
 ```swift
 /// The height of the desc containerView, if you set the left image, is also included
@@ -102,9 +102,9 @@ public var titleLineBreakMode: NSLineBreakMode = .byWordWrapping
 ```
 #### About pageControl settings
 
-<img src="https://github.com/MQZHot/ZCycleView/raw/master/Picture/pic3.png">
+<img src="https://github.com/ghostlordstar/ZCycleViewNew/raw/master/Picture/pic3.png">
 
-<img src="https://github.com/MQZHot/ZCycleView/raw/master/Picture/pic4.png">
+<img src="https://github.com/ghostlordstar/ZCycleViewNew/raw/master/Picture/pic4.png">
 
 ```swift
 /// Whether to hide pageControl, the default `false`
@@ -166,6 +166,13 @@ var scrollDirection: UICollectionViewScrollDirection = .horizontal
 /// placeholderImage
 var placeholderImage: UIImage? = nil
 ```
+
+## remind
+    If you encounter the following compilation error：`Compiling for iOS 8.0, but module 'Kingfisher' has a minimum deployment target of iOS xxx`
+    ![Swift Compiler Error](https://github.com/ghostlordstar/ZCycleViewNew/blob/master/Picture/CompilerError.jpg)
+
+    Please check if the compiled version of ZCycleViewNew is smaller than the minimum version supported by your project:
+    ![Error Resolve](https://github.com/ghostlordstar/ZCycleViewNew/blob/master/Picture/CompilerErrorResolve.png)
 
 ## dependency
 

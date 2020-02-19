@@ -17,6 +17,13 @@ enum ResourceType {
 
 class ZCycleViewCell: UICollectionViewCell {
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        imageView.frame = contentView.bounds
+        titleContainerView.frame = CGRect(x: 0, y: contentView.bounds.size.height - titleContainerViewH, width: contentView.bounds.size.width, height: titleContainerViewH)
+    }
+    
     var titleContainerViewH: CGFloat = 25
     /// set text
     func attributeString(_ attributeString: NSAttributedString?, titleImgURL: String? = nil, titleImage: UIImage? = nil, titleImageSize: CGSize? = nil) {
@@ -83,5 +90,12 @@ class ZCycleViewCell: UICollectionViewCell {
         titleLabel = UILabel()
         titleLabel.clipsToBounds = true
         titleContainerView.addSubview(titleLabel)
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        imageView.frame = contentView.bounds
+        titleContainerView.frame = CGRect(x: 0, y: contentView.bounds.size.height - titleContainerViewH, width: contentView.bounds.size.width, height: titleContainerViewH)
     }
 }

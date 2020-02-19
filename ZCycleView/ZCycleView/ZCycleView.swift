@@ -169,6 +169,24 @@ public class ZCycleView: UIView {
     /// item BorderWidth
     public var itemBorderWidth: CGFloat = 0
     
+    /// item InsetTop, conflicts with itemSize
+    public var itemInsetTop: CGFloat = 0 {
+        
+        didSet {
+            assert(itemInsetTop > 0, "itemInsetTop should not be negative! (itemInsetTop > 0 ✅)")
+            collectionView.frame = CGRect.init(x: 0, y: itemInsetTop, width: self.frame.width, height: self.frame.height - itemInsetBottom - itemInsetTop)
+        }
+    }
+    
+    /// item InsetBottom, conflicts with itemSize
+    public var itemInsetBottom: CGFloat = 0 {
+        didSet {
+            assert(itemInsetBottom > 0, "itemInsetBottom should not be negative! (itemInsetBottom > 0 ✅)")
+            collectionView.frame = CGRect.init(x: 0, y: itemInsetTop, width: self.frame.width, height: self.frame.height - itemInsetBottom - itemInsetTop)
+        }
+    }
+    
+    
     // MARK: - imageView Setting
     /// content Mode of item's image
     public var imageContentMode: UIView.ContentMode = .scaleToFill
@@ -217,7 +235,7 @@ public class ZCycleView: UIView {
     public var pageControlHeight: CGFloat = 25 {
         didSet {
             pageControl.frame = CGRect(x: 0, y: frame.size.height-pageControlHeight, width: frame.size.width, height: pageControlHeight)
-//            pageControl.updateFrame()
+            //            pageControl.updateFrame()
         }
     }
     /// PageControl's backgroundColor
@@ -316,12 +334,12 @@ public class ZCycleView: UIView {
     
     private func addCollectionView() {
         flowLayout                                    = ZCycleLayout()
-        flowLayout.itemSize                           = itemSize != nil ? itemSize! : bounds.size
+        flowLayout.itemSize                           = itemSize != nil ? itemSize! : CGSize.init(width: bounds.width, height: bounds.height - itemInsetTop - itemInsetBottom)
         flowLayout.minimumInteritemSpacing            = 10000
         flowLayout.minimumLineSpacing                 = itemSpacing
         flowLayout.scrollDirection                    = scrollDirection
         
-        collectionView                                = UICollectionView(frame: bounds, collectionViewLayout: flowLayout)
+        collectionView                                = UICollectionView(frame: CGRect.init(x: 0, y: itemInsetTop, width: self.frame.width, height: self.frame.height - itemInsetBottom - itemInsetTop), collectionViewLayout: flowLayout)
         collectionView.backgroundColor                = UIColor.clear
         collectionView.bounces                        = false
         collectionView.showsVerticalScrollIndicator   = false
@@ -330,7 +348,7 @@ public class ZCycleView: UIView {
         collectionView.dataSource                     = self
         collectionView.scrollsToTop                   = false
         collectionView.decelerationRate               = UIScrollView.DecelerationRate(rawValue: 0.0)
-//        collectionView.isPagingEnabled                = true
+        //        collectionView.isPagingEnabled                = true
         registerCell()
         addSubview(collectionView)
     }
@@ -365,8 +383,8 @@ public class ZCycleView: UIView {
     
     public override func layoutSubviews() {
         super.layoutSubviews()
-        flowLayout.itemSize = itemSize != nil ? itemSize! : bounds.size
-        collectionView.frame = bounds
+        flowLayout.itemSize = itemSize != nil ? itemSize! : CGSize.init(width: bounds.width, height: bounds.height - itemInsetTop - itemInsetBottom)
+        collectionView.frame = CGRect.init(x: 0, y: itemInsetTop, width: self.frame.width, height: self.frame.height - itemInsetBottom - itemInsetTop)
         pageControl.frame = CGRect(x: 0, y: frame.size.height-pageControlHeight, width: frame.size.width, height: pageControlHeight)
         
         collectionView.setContentOffset(.zero, animated: false)
