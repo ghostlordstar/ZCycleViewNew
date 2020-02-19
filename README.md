@@ -169,10 +169,10 @@ var placeholderImage: UIImage? = nil
 
 ## remind
     If you encounter the following compilation error：`Compiling for iOS 8.0, but module 'Kingfisher' has a minimum deployment target of iOS xxx`
-    ![Swift Compiler Error](https://github.com/ghostlordstar/ZCycleViewNew/blob/master/Picture/CompilerError.jpg)
+   ![Swift Compiler Error](https://github.com/ghostlordstar/ZCycleViewNew/blob/master/Picture/CompilerError.jpg)
 
     Please check if the compiled version of ZCycleViewNew is smaller than the minimum version supported by your project:
-    ![Error Resolve](https://github.com/ghostlordstar/ZCycleViewNew/blob/master/Picture/CompilerErrorResolve.png)
+   ![Error Resolve](https://github.com/ghostlordstar/ZCycleViewNew/blob/master/Picture/CompilerErrorResolve.png)
 
 ## dependency
 
