@@ -173,7 +173,7 @@ public class ZCycleView: UIView {
     public var itemInsetTop: CGFloat = 0 {
         
         didSet {
-            assert(itemInsetTop > 0, "itemInsetTop should not be negative! (itemInsetTop > 0 ✅)")
+            assert(itemInsetTop >= 0, "itemInsetTop should not be negative! (itemInsetTop >= 0 ✅)")
             collectionView.frame = CGRect.init(x: 0, y: itemInsetTop, width: self.frame.width, height: self.frame.height - itemInsetBottom - itemInsetTop)
         }
     }
@@ -181,7 +181,7 @@ public class ZCycleView: UIView {
     /// item InsetBottom, conflicts with itemSize
     public var itemInsetBottom: CGFloat = 0 {
         didSet {
-            assert(itemInsetBottom > 0, "itemInsetBottom should not be negative! (itemInsetBottom > 0 ✅)")
+            assert(itemInsetBottom >= 0, "itemInsetBottom should not be negative! (itemInsetBottom >= 0 ✅)")
             collectionView.frame = CGRect.init(x: 0, y: itemInsetTop, width: self.frame.width, height: self.frame.height - itemInsetBottom - itemInsetTop)
         }
     }
